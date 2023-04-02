@@ -1,0 +1,8 @@
+FROM ubuntu:latest
+COPY . /docker_practice1
+WORKDIR /docker_practice1
+RUN apt install -y apache2
+RUN apt install -y apache2-utils
+RUN apt clean
+EXPOSE 80
+CMD ["apache2ctl", "-D", "FOREGROUND"]
